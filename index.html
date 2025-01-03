@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitFrame's Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            position: relative; /* Ensure content stays on top of particles */
+        }
+
+        /* Particles.js background */
+        #particles-js {
+            position: fixed;  /* Fixed position to cover the entire screen */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Particles stay behind content */
+        }
+
+        /* Navbar styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(18, 18, 18, 0); /* Fully transparent at the top */
+            backdrop-filter: blur(0px); /* No blur at the top */
+            padding: 0.5rem 2rem;
+            box-shadow: none; /* No shadow when at the top */
+            z-index: 1000;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .navbar h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        .navbar .socials {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .navbar .socials a {
+            text-decoration: none;
+            color: #ffffff;
+            margin-left: 1rem;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .socials a:hover {
+            color: #dddddd;
+        }
+
+        /* Main content styles */
+        main {
+            padding: 6rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 2rem;
+            justify-content: center; /* Centering the grid */
+            align-items: center;
+            max-width: 1200px; /* Optional: Limits the max width of the grid */
+            margin: 0 auto; /* Centers the grid horizontally */
+        }
+
+        /* Card styles */
+        .card {
+            background-color: rgba(30, 30, 30, 0.8); /* Slight transparency */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(8px); /* Adding blur effect */
+        }
+
+        /* Hover effect for the cards */
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #b0b0b0;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 1rem;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            border: 1px solid #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .card a:hover {
+            background-color: #ffffff;
+            color: #1e1e1e;
+        }
+
+        /* Special DayScope card */
+        .card.dayScope {
+            background-color: #272727;
+            border: 2px solid #ffffff;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .card.dayScope h2 {
+            color: #ffffff; /* Green accent for DayScope */
+        }
+
+        .card.dayScope a {
+            border-color: #ffffff;
+        }
+
+        .card.dayScope a:hover {
+            background-color: #ffffff;
+            color: #1e1e1e;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Particles background -->
+    <div id="particles-js"></div>
+
+    <nav class="navbar">
+        <div class="navbar-left">
+            <h1>BitFrame's Site</h1>
+        </div>
+        <div class="navbar-right socials">
+            <a href="https://github.com/bit-frame" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://discord.gg/4DVMyKx4uU" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="card">
+            <h2>About Me</h2>
+            <p>Hello! I'm a developer passionate about creating meaningful and accessible applications that are open source.</p>
+        </div>
+        <div class="card">
+            <h2>Things I've Created</h2>
+            <p>Explore my open-source contributions and projects on GitHub!</p>
+            <a href="https://github.com/bit-frame" target="_blank">View my Projects</a>
+        </div>
+        <div class="card">
+            <h2>Contact</h2>
+            <p>Feel free to reach out to me on Discord or connect via my other socials.</p>
+        </div>
+        <div class="card dayScope">
+            <h2>My Current Project</h2>
+            <p>DayScope is a school tracking application designed to simplify the process of tracking schedules, homework, exams, and more.</p>
+            <a href="https://github.com/bit-frame/day-scope" target="_blank">Check Out DayScope</a>
+        </div>
+    </main>
+
+    <script>
+        // ParticlesJS initialization
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 50,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#ffffff"
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1
+                    }
+                },
+                "line_linked": {
+                    "enable": false
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 1,
+                    "direction": "none",
+                    "random": true,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "window",
+                "events": {
+                    "onhover": {
+                        "enable": false
+                    },
+                    "onclick": {
+                        "enable": false
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        // JavaScript to handle scroll effect
+        window.addEventListener("scroll", function() {
+            var navbar = document.querySelector(".navbar");
+
+            if (window.scrollY > 0) {
+                navbar.style.backgroundColor = "rgba(18, 18, 18, 0.6)";  // Apply background opacity
+                navbar.style.backdropFilter = "blur(15px)";  // Apply blur effect
+                navbar.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.2)";  // Add shadow when scrolled
+            } else {
+                navbar.style.backgroundColor = "rgba(18, 18, 18, 0)";  // Transparent when at the top
+                navbar.style.backdropFilter = "blur(0px)";  // No blur when at the top
+                navbar.style.boxShadow = "none";  // Remove shadow when at the top
+            }
+        });
+    </script>
+</body>
+</html>
