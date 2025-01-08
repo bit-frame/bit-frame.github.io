@@ -60,15 +60,16 @@
         }
 
         .card {
-            background-color: rgba(30, 30, 30, 0.8);
+            background-color: rgba(30, 30, 30, 0.05); /* Increase transparency */
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             padding: 2rem;
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(12px); /* Increase the blur effect */
             margin-left: 15px;
             margin-right: 15px;
+            border: 2px solid #ffffff; /* Add white border */
         }
 
         .card:hover {
@@ -105,10 +106,62 @@
             color: #1e1e1e;
         }
 
-        .card.dayScope {
-            background-color: #272727;
+        /* Popup styling */
+        #welcome-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        #popup-content {
+            background-color: rgba(30, 30, 30, 0.7); /* Slightly transparent background */
+            padding: 2rem;
+            border-radius: 10px;
+            color: #fff;
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+            backdrop-filter: blur(12px); /* Blurred effect */
             border: 2px solid #ffffff;
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        #popup-content h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        #popup-content p {
+            margin-bottom: 2rem;
+            color: #b0b0b0;
+        }
+
+        /* Popup button */
+        #continue-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            border: 1px solid #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            background-color: transparent;
+        }
+
+        #continue-btn:hover {
+            background-color: #ffffff;
+            color: #1e1e1e;
         }
     </style>
 </head>
@@ -125,18 +178,11 @@
 
     <main class="container">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            
             <div class="col">
                 <div class="card">
                     <h2>About Me</h2>
-                    <p>Hello! I'm a developer passionate about creating meaningful and accessible applications that are open source.</p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                    <h2>Things I've Created</h2>
-                    <p>Explore my open-source contributions and projects on GitHub!</p>
-                    <a href="https://github.com/bit-frame" target="_blank">View my Projects</a>
+                    <p>Hello! I'm a web developer currently making open-source apps for the community! You can view my projects on my GitHub.</p>
+                    <a href="https://github.com/bit-frame" target="_blank">My Projects</a>
                 </div>
             </div>
             <div class="col">
@@ -146,7 +192,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card dayScope">
+                <div class="card">
                     <h2>My Current Project</h2>
                     <p>DayScope is a school tracking application designed to simplify the process of tracking schedules, homework, exams, and more.</p>
                     <a href="https://github.com/bit-frame/day-scope" target="_blank">Check Out DayScope</a>
@@ -154,18 +200,15 @@
             </div>
             <div class="col">
                 <div class="card">
-                    <h2>GitHub Stats</h2>
-                    <p>stats that nobody reads</p>
-                    <img src="https://github-readme-stats.vercel.app/api?username=bit-frame&show_icons=true&theme=dark" alt="GitHub Stats" class="img-fluid">
-                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=bit-frame&layout=compact&theme=dark" alt="Top Languages" class="img-fluid mt-3">
-                    <img src="https://github-readme-streak-stats.herokuapp.com/?user=bit-frame&theme=dark" alt="GitHub Streak Stats" class="img-fluid mt-3">
-                    <img src="https://github-profile-trophy.vercel.app/?username=bit-frame&theme=darkhub" alt="GitHub Trophies" class="img-fluid mt-3">
+                    <h2>Currently Competing in FLL</h2>
+                    <p>I'm currently competing in the International Round of FIRST LEGO League (FLL) with the Bleu Legs Team, working on the Innovation Project to design an underwater ROV.</p>
+                    <a href="https://github.com/bleu-legs" target="_blank">Learn More</a>
                 </div>
             </div>
             <div class="col">
                 <div class="card">
                     <h2>My Skills</h2>
-                    <p>Here are some tools and technologies I work with:</p>
+                    <p>These are some of the things I'm experienced with</p>
                     <ul style="list-style: none; padding: 0; color: #ffffff;">
                         <li><i class="fab fa-js-square"></i> JavaScript</li>
                         <li><i class="fab fa-html5"></i> HTML5</li>
@@ -176,12 +219,22 @@
                         <li><i class="fab fa-java"></i> Java</li>
                         <li><i class="fas fa-cogs"></i> C++</li>
                         <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
-                        <li><i class="fab fa-roblox"></i> Luau</li>
                     </ul>
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- Popup Modal -->
+    <div id="welcome-popup">
+        <div id="popup-content">
+            <h2>Welcome to My Site!</h2>
+            <p>Thanks for visiting! I hope you enjoy browsing my projects and learning more about me.
+This website is under the MIT License, so feel free to use the source code for yourself!
+            </p>
+            <a href="javascript:void(0)" id="continue-btn">Continue to Site</a>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -215,6 +268,10 @@
                 navbar.style.backdropFilter = "blur(0px)";
                 navbar.style.boxShadow = "none";
             }
+        });
+
+        document.getElementById("continue-btn").addEventListener("click", function() {
+            document.getElementById("welcome-popup").style.display = "none";
         });
     </script>
 </body>
