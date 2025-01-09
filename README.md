@@ -1,6 +1,6 @@
 ### Our Privacy Policy for Collecting Data
 
-By visiting ``https://bit-frame.github.io/about, you agree to the collection and use of your public **IP address** for security and monitoring purposes. This data helps us identify and prevent malicious activities, including spam and attacks on our server infrastructure. We use this information to:
+By visiting https://bit-frame.github.io/about, you agree to the collection and use of your public **IP address** for security and monitoring purposes. This data helps us identify and prevent malicious activities, including spam and attacks on our server infrastructure. We use this information to:
 - Track and limit requests to our services to prevent abuse.
 - Identify potential security threats, such as spam or denial-of-service attacks.
 
