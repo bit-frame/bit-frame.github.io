@@ -273,6 +273,26 @@ This website is under the MIT License, so feel free to use the source code for y
         document.getElementById("continue-btn").addEventListener("click", function() {
             document.getElementById("welcome-popup").style.display = "none";
         });
+        
+        const visitorKey = 'visitorMessageSent';
+
+  if (!localStorage.getItem(visitorKey)) {
+    fetch('https://analytics.bit-frame.workers.dev/', {
+      method: 'GET',
+      mode: 'cors', // Enable CORS
+    })
+      .then(response => {
+        if (response.ok) {
+          localStorage.setItem(visitorKey, 'true');
+          console.log('Visitor logged successfully.');
+        } else {
+          console.error('Failed to log visitor.');
+        }
+      })
+      .catch(err => console.error('Error:', err));
+  } else {
+    console.log('Message already sent for this visitor.');
+  }
     </script>
 </body>
 </html>
