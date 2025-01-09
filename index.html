@@ -277,7 +277,7 @@ This website is under the MIT License, so feel free to use the source code for y
         const visitorKey = 'visitorMessageSent';
 
   if (!localStorage.getItem(visitorKey)) {
-    fetch('https://analytics.bit-frame.workers.dev/', {
+    fetch('DISABLED', {
       method: 'GET',
       mode: 'cors', // Enable CORS
     })
