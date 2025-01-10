@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,12 +32,14 @@
     position: fixed;
     top: 2.5rem; /* Adjust this to match the height of your announcement bar */
     width: 100%;
-    background-color: rgba(18, 18, 18, 0);
-    backdrop-filter: blur(0px);
+    background-color: transparent; /* Fully transparent background */
     padding: 0.5rem 2rem;
     z-index: 1000;
-    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease;
+    box-shadow: none; /* Remove the shadow */
 }
+
+
 
         .navbar h1 {
             margin: 0;
@@ -236,7 +239,7 @@
             <div class="col">
                 <div class="card">
                     <h2>About Me</h2>
-                    <p>Hello! I'm a web developer currently making open-source apps for the community! You can view my projects on my GitHub.</p>
+                    <p>Hello! I'm BitFrame, a web developer currently making open-source apps like DayScope and BitRender! My projects are available on GitHub.</p>
                     <a href="https://github.com/bit-frame" target="_blank">My Projects</a>
                 </div>
             </div>
@@ -261,6 +264,42 @@
             </div>
             <div class="col">
                 <div class="card">
+                    <h2>BitFlow - A CSS Framework</h2>
+                    <p>I'm currently considering making a CSS Framework so it's easier to make sites like this! BitFlow will customize all elements to look like this site. Stay Tuned!</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <h2>BitRender - An AI Image Generator</h2>
+                    <p>I've decided to make an AI Image Generator!</p>
+                    <a href="https://bit-frame.github.io/ai" target="_blank">Try it now</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <h2>Current Roles and Contributions</h2>
+                    <p>Here are the roles I'm currently involved in and my contributions to different projects.</p>
+                    <ul style="list-style: none; padding: 0; color: #ffffff; text-align: left;">
+                        <li><strong>Bleu Legs (FLL) -</strong> Team Member</strong></li>
+                        <li><strong>BitFrame Dev -</strong> Owner, Lead Developer</li>
+                        <li><strong>DayScope -</strong> Project Lead, Lead Developer</li>
+                        <li><strong>BitRender -</strong> Lead Developer</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <h2>Tools I've Built</h2>
+                    <p>Here are some useful utils I've made, all available to the public on my GitHub.</p>
+                    <ul style="list-style: none; padding: 0; color: #ffffff; text-align: left;">
+                        <li><strong>Package Builder</strong> - A lightweight package, making creating packages easy.</li>
+                        <li><strong>DayScope Installer V1</strong> - A lightweight installer, making installing DayScope easy.</li>
+                    </ul>
+                    <a href="https://github.com/bit-frame/" target="_blank">View all Tools</a>
+                </div>
+            </div>            
+            <div class="col">
+                <div class="card">
                     <h2>My Skills</h2>
                     <p>These are some of the things I'm experienced with</p>
                     <ul style="list-style: none; padding: 0; color: #ffffff;">
@@ -278,17 +317,25 @@
             </div>
             <div class="col">
                 <div class="card">
-                    <h2>BitFlow - A CSS Framework</h2>
-                    <p>I'm currently considering making a CSS Framework so it's easier to make sites like this! BitFlow will customize all elements to look like this site. Stay Tuned!</p>
+                    <h2>Hackathons & Competitions</h2>
+                    <ul style="list-style: none; padding: 0; color: #ffffff; text-align: left;">
+                        <li><strong>First Lego League Regionals</strong> - Winner of the Motivation Award 2024</li>
+                    </ul>
                 </div>
             </div>
-            <div class="col">
-                <div class="card">
-                    <h2>BitRender - An AI Image Generator</h2>
-                    <p>I've decided to make an AI Image Generator! It is powered by Cloudflare.</p>
-                    <a href="https://bit-frame.github.io/ai" target="_blank">Try it now</a>
-                </div>
+            <div class="card">
+                <h2>Abandoned Projects</h2>
+                <p>Some of my dead projects...</p>
+                <ul style="list-style: none; padding: 0; color: #ffffff; text-align: left;">
+                    <li>
+                        <strong>Basic Moderation Tools</strong> - <span style="color: #b0b0b0;">Too difficult to maintain</span>
+                    </li>
+                    <li>
+                        <strong>ManagePi</strong> - <span style="color: #b0b0b0;">Lack of Interest</span>
+                    </li>
+                </ul>
             </div>
+            
         </div>
     </main>
 
@@ -308,34 +355,57 @@ This website is under the MIT License, so feel free to use the source code for y
         particlesJS("particles-js", {
             "particles": {
                 "number": {
-                    "value": 50,
+                    "value": 80,
                     "density": {
                         "enable": true,
                         "value_area": 800
                     }
                 },
-                "color": { "value": "#ffffff" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.5 },
-                "size": { "value": 3 },
-                "line_linked": { "enable": true },
-                "move": { "enable": true, "speed": 1, "direction": "none" }
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle"
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 0.5,
+                        "opacity_min": 0.1
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "color": "#ffffff",
+                    "distance": 150,
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out"
+                }
             },
-            "retina_detect": true
-        });
-
-        window.addEventListener("scroll", function() {
-            const navbar = document.querySelector(".navbar");
-            if (window.scrollY > 0) {
-                navbar.style.backgroundColor = "rgba(18, 18, 18, 0.6)";
-                navbar.style.backdropFilter = "blur(15px)";
-                navbar.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.2)";
-            } else {
-                navbar.style.backgroundColor = "rgba(18, 18, 18, 0)";
-                navbar.style.backdropFilter = "blur(0px)";
-                navbar.style.boxShadow = "none";
+            "interactivity": {
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    }
+                }
             }
         });
+
 
         document.getElementById("continue-btn").addEventListener("click", function() {
             document.getElementById("welcome-popup").style.display = "none";
