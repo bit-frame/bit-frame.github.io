@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,15 +28,15 @@
         }
 
         .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(18, 18, 18, 0);
-            backdrop-filter: blur(0px);
-            padding: 0.5rem 2rem;
-            z-index: 1000;
-            transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
-        }
+    position: fixed;
+    top: 2.5rem; /* Adjust this to match the height of your announcement bar */
+    width: 100%;
+    background-color: rgba(18, 18, 18, 0);
+    backdrop-filter: blur(0px);
+    padding: 0.5rem 2rem;
+    z-index: 1000;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
 
         .navbar h1 {
             margin: 0;
@@ -163,10 +164,64 @@
             background-color: #ffffff;
             color: #1e1e1e;
         }
+
+        .announcement-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    z-index: 1001; /* Above navbar */
+    backdrop-filter: blur(10px); /* Adds a subtle glassmorphic effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.announcement-bar p {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.announcement-bar a {
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.announcement-bar a:hover {
+    color: #dddddd;
+}
+
     </style>
 </head>
 <body>
     <div id="particles-js"></div>
+
+    <div class="announcement-bar" id="announcement-bar">
+        <p>Hello! Welcome to my site!</p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    // Fetch the announcement message from the JSON file hosted on Cloudflare Pages
+    fetch('https://bitframe.pages.dev/announcement.json')
+        .then(response => response.json())
+        .then(data => {
+            // Check if the announcement data is available and set it to the announcement bar
+            const announcementBar = document.getElementById('announcement-bar');
+            if (data && data.message) {
+                announcementBar.innerHTML = `<p>${data.message}</p>`;
+            } else {
+                announcementBar.style.display = 'none'; // Hide if no announcement
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching announcement:', error);
+        });
+});
+    </script>
 
     <nav class="navbar d-flex justify-content-between align-items-center">
         <h1>BitFrame's Site</h1>
