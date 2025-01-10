@@ -1,13 +1,3 @@
 ### Welcome
 Welcome to my Website Repo! Check out the website at https://bit-frame.github.io/
 The source code for this site is free to use, as long as you agree to the [Terms and Conditions](https://github.com/bit-frame/bit-frame.github.io/blob/main/LICENSE) and provide proper credit to bit-frame.
-
-### Our Privacy Policy for Collecting Data
-
-By visiting https://bit-frame.github.io/, you agree to the collection and use of your public **IP address** for security and monitoring purposes. This data helps us identify and prevent malicious activities, including spam and attacks on our server infrastructure. We use this information to:
-- Track and limit requests to our services to prevent abuse.
-- Identify potential security threats, such as spam or denial-of-service attacks.
-
-This data is used solely for security purposes and will not be shared with third parties unless required by law or to protect the security of the site.
-
-The IP address data is retained only for as long as necessary to ensure the protection of the website and prevent malicious actions.
